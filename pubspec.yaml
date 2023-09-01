@@ -1,0 +1,50 @@
+name: digilogtv
+description: A free and open-source TV news app, inspired by Linux Mint's Hypnotix.
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  build_runner: ^2.4.6
+  flutter:
+    sdk: flutter
+  flutter_inappwebview: ^5.7.2+3
+  flutter_launcher_icons: ^0.13.1
+  flutter_mobx: ^2.0.6+5
+  mobx: ^2.2.0
+  mobx_codegen: ^2.3.0
+  shared_preferences: ^2.2.0
+  video_player: ^2.7.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icons/icon.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/icons/icon.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icons/icon.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/icon.png
+    - assets/images/bitcoin.png
+    - assets/images/monero.png
