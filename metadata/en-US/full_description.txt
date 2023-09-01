@@ -1,3 +1,1 @@
-<p>A free and open-source TV news app, inspired by Linux Mint's Hypnotix.
-
-The app features English news channels from all around the world, sourced from Free-TV/IPTV on GitHub, just like Hypnotix, to ensure that it only includes free, legal and publicly available content.</p>
+<p><i>Digilog TV</i> is a free and open-source TV news app, inspired by Linux Mint's Hypnotix. The app features English news channels from all around the world, sourced from Free-TV/IPTV on GitHub, just like Hypnotix, to ensure that it only includes free, legal and publicly available content.</p><p><br><b>Features:</b></p><ul><li>Intuitive and easy-to-navigate interface design</li><li>Offers a diverse selection of global news channels</li><li>Convenient favorites list for quick access to your preferred channels</li><li>Includes only free, legal, and publicly available content</li></ul>
