@@ -2,7 +2,11 @@
 
 <img src="screenshots/screenshot1.png" alt="Screenshot 1" width="270" height="602"><img src="screenshots/screenshot2.png" alt="Screenshot 2" width="270" height="602"><img src="screenshots/screenshot3.png" alt="Screenshot 3" width="270" height="602"><img src="screenshots/screenshot4.png" alt="Screenshot 4" width="270" height="602">
 
-Download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/thirdbank/releases/latest)
+[<img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png"
+     alt="Get it at the amazon appstore"
+     height="65">](https://www.amazon.com/dp/B0CH3W25Z1/)
+
+Or download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/thirdbank/releases/latest)
 
 ## What is Digilog TV?
 
