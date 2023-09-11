@@ -1,0 +1,1 @@
+* Resolved issue with screen turning off during video playback

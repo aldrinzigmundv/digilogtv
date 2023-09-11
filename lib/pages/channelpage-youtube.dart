@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'package:digilogtv/services/storage.dart';
 
@@ -28,10 +29,12 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
   @override
   void initState() {
     super.initState();
+    WakelockPlus.enable();
   }
 
   @override
   void dispose() {
+    WakelockPlus.disable();
     SystemChrome.setPreferredOrientations(DeviceOrientation.values);
     super.dispose();
   }

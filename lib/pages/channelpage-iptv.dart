@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:video_player/video_player.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'package:digilogtv/services/storage.dart';
 
@@ -49,6 +50,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
   @override
   void initState() {
     super.initState();
+    WakelockPlus.enable();
     _videoPlayerController = VideoPlayerController.networkUrl(
         Uri.parse(storage.channels.channelList[index].link))
       ..initialize().then((_) {
@@ -59,6 +61,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
 
   @override
   void dispose() async {
+    WakelockPlus.disable();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
     _videoPlayerController.dispose();
