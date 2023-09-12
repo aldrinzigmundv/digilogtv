@@ -84,8 +84,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                         onTap: () => goToChannel(index),
                         child: Card(
                             child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 27.0, horizontal: 18.0),
+                          padding: const EdgeInsets.all(18.0),
                           child: Row(
                             children: [
                               Padding(

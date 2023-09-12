@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/pages/home pages/channellistpage.dart';
 import 'package:digilogtv/pages/home pages/favoritespage.dart';
-import 'package:digilogtv/pages/home pages/donationpage.dart';
+import 'package:digilogtv/pages/home%20pages/contactpage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.storage, required this.formattingProvider,});
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _pages = <Widget>[
-      const DonationPage(),
+      const ContactPage(),
       ChannelListPage(storage: storage, formattingProvider: formattingProvider,),
       FavoritesPage(storage: storage, formattingProvider: formattingProvider,),
     ];
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
-              label: 'Donate',
+              label: 'Contact Me',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.reorder),

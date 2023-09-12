@@ -1,0 +1,3 @@
+* Resolved issue with screen turning off during video playback
+* Added TV news channels' website to comply with Google Play requirements
+* Improved UI Design

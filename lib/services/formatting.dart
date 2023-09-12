@@ -11,7 +11,7 @@ abstract class _FormattingProvider with Store {
   @action
   formatIcon(Source source) {
     if (source == Source.iptv) {
-      return Icon(Icons.live_tv, color: Colors.indigo[900],);
+      return Icon(Icons.satellite_alt, color: Colors.indigo[900],);
     } else {
       return const Icon(Icons.smart_display, color: Colors.red,);
     }

@@ -93,11 +93,11 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
         ),
         bottomNavigationBar:
             (MediaQuery.of(context).orientation == Orientation.portrait)
-                ? const Padding(
-                    padding: EdgeInsets.all(27.0),
+                ? Padding(
+                    padding: const EdgeInsets.all(27.0),
                     child: Text(
-                      'Tap the video for full screen viewing', textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white),
+                      'Tap the video for full screen viewing. \n \n To get in touch with this news channel, visit their website at: ${storage.channels.channelList[index].contactpage}', textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white),
                     ),
                   )
                 : null);
