@@ -7,6 +7,6 @@ void main() => runApp(
     title: "Digilog TV",
     initialRoute: '/',
     routes: {
-      '/': (context) => LoadingPage(),
+      '/': (context) => const LoadingPage(),
     },
 ));

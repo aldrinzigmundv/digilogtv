@@ -1,3 +1,4 @@
 * Resolved issue with screen turning off during video playback
+* Resolved issue with certain channels not working correctly when selected from the Favorites Page
 * Added TV news channels' websites to comply with Google Play requirements
 * Improved UI Design

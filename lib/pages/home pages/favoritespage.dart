@@ -35,7 +35,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
   }
 
   goToChannel(int index) {
-    if (storage.channels.channelList[index].source == Source.iptv) {
+    if (storage.arrangedChannelList[index].source == Source.iptv) {
       Navigator.push(
         context,
         MaterialPageRoute(
