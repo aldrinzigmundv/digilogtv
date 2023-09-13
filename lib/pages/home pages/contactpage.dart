@@ -29,6 +29,15 @@ class ContactPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(18.0, 36.0, 18.0, 18.0),
+            child: Image.asset(
+              'assets/icons/icon.png',
+              height: 180.0,
+              width: 180.0,
+              fit: BoxFit.contain,
+            ),
+          ),
           const Padding(
             padding: EdgeInsets.fromLTRB(18.0, 36.0, 18.0, 18.0),
             child: Text(
@@ -45,77 +54,57 @@ class ContactPage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(
-            height: (MediaQuery.of(context).size.height -
-                kBottomNavigationBarHeight -
-                AppBar().preferredSize.height),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Padding(
-                    padding: EdgeInsets.fromLTRB(9.0, 27.0, 9.0, 18.0),
-                    child: Text(
-                      'Donate Bitcoin to Help Me Maintain this App',
-                      style: TextStyle(fontSize: 27.0),
-                      textAlign: TextAlign.center,
-                    )),
-                Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 9.0, vertical: 18.0),
-                    child: GestureDetector(
-                      onTap: () => copyBitcoinAddress(context),
-                      child: Image.asset(
-                        'assets/images/bitcoin.png',
-                        height: 300.0,
-                        width: 300.0,
-                        fit: BoxFit.contain,
-                      ),
-                    )),
-                const Padding(
-                    padding: EdgeInsets.all(18.0),
-                    child: Text(
-                      'Tap the QR Code to Copy the Bitcoin Address to your Clipboard',
-                      style: TextStyle(fontSize: 15.0),
-                      textAlign: TextAlign.center,
-                    )),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: (MediaQuery.of(context).size.height -
-                kBottomNavigationBarHeight -
-                AppBar().preferredSize.height),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Padding(
-                    padding: EdgeInsets.fromLTRB(9.0, 27.0, 9.0, 18.0),
-                    child: Text(
-                      'Donate Monero to Help Me Maintain this App',
-                      style: TextStyle(fontSize: 27.0),
-                      textAlign: TextAlign.center,
-                    )),
-                Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: GestureDetector(
-                      onTap: () => copyMoneroAddress(context),
-                      child: Image.asset(
-                        'assets/images/monero.png',
-                        height: 300.0,
-                        width: 300.0,
-                        fit: BoxFit.contain,
-                      ),
-                    )),
-                const Padding(
-                    padding: EdgeInsets.all(18.0),
-                    child: Text(
-                      'Tap the QR Codes to Copy the Monero Address to your Clipboard',
-                      style: TextStyle(fontSize: 15.0),
-                      textAlign: TextAlign.center,
-                    )),
-              ],
-            ),
-          ),
+          const Padding(
+              padding: EdgeInsets.fromLTRB(9.0, 27.0, 9.0, 18.0),
+              child: Text(
+                'Donate Bitcoin to Help Me Maintain this App',
+                style: TextStyle(fontSize: 27.0),
+                textAlign: TextAlign.center,
+              )),
+          Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 9.0, vertical: 18.0),
+              child: GestureDetector(
+                onTap: () => copyBitcoinAddress(context),
+                child: Image.asset(
+                  'assets/images/bitcoin.png',
+                  height: 300.0,
+                  width: 300.0,
+                  fit: BoxFit.contain,
+                ),
+              )),
+          const Padding(
+              padding: EdgeInsets.all(18.0),
+              child: Text(
+                'Tap the QR Code to Copy the Bitcoin Address to your Clipboard',
+                style: TextStyle(fontSize: 15.0),
+                textAlign: TextAlign.center,
+              )),
+          const Padding(
+              padding: EdgeInsets.fromLTRB(9.0, 27.0, 9.0, 18.0),
+              child: Text(
+                'Donate Monero to Help Me Maintain this App',
+                style: TextStyle(fontSize: 27.0),
+                textAlign: TextAlign.center,
+              )),
+          Padding(
+              padding: const EdgeInsets.all(9.0),
+              child: GestureDetector(
+                onTap: () => copyMoneroAddress(context),
+                child: Image.asset(
+                  'assets/images/monero.png',
+                  height: 300.0,
+                  width: 300.0,
+                  fit: BoxFit.contain,
+                ),
+              )),
+          const Padding(
+              padding: EdgeInsets.all(18.0),
+              child: Text(
+                'Tap the QR Codes to Copy the Monero Address to your Clipboard',
+                style: TextStyle(fontSize: 15.0),
+                textAlign: TextAlign.center,
+              )),
         ],
       ),
     );
