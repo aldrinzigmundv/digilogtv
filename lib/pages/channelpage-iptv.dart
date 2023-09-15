@@ -8,20 +8,17 @@ import 'package:digilogtv/services/storage.dart';
 
 class ChannelPageIPTV extends StatefulWidget {
   const ChannelPageIPTV(
-      {super.key,
-      required this.index,
-      required this.storage});
+      {super.key, required this.index, required this.storage});
 
   final int index;
   final StorageProvider storage;
 
   @override
-  State<ChannelPageIPTV> createState() =>
-      _ChannelPageIPTVState(index, storage);
+  State<ChannelPageIPTV> createState() => _ChannelPageIPTVState();
 }
 
 class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
-  _ChannelPageIPTVState(this.index, this.storage);
+  _ChannelPageIPTVState();
 
   late int index;
   late StorageProvider storage;
@@ -50,6 +47,8 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
   @override
   void initState() {
     super.initState();
+    index = widget.index;
+    storage = widget.storage;
     WakelockPlus.enable();
     _videoPlayerController = VideoPlayerController.networkUrl(
         Uri.parse(storage.channels.channelList[index].link))
@@ -96,7 +95,8 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
                 ? Padding(
                     padding: const EdgeInsets.all(27.0),
                     child: Text(
-                      'Tap the video for full screen viewing. \n \n To get in touch with this news channel, visit their website at: ${storage.channels.channelList[index].contactpage}', textAlign: TextAlign.center,
+                      'Tap the video for full screen viewing. \n \n To get in touch with this news channel, visit their website at: ${storage.channels.channelList[index].contactpage}',
+                      textAlign: TextAlign.center,
                       style: const TextStyle(color: Colors.white),
                     ),
                   )

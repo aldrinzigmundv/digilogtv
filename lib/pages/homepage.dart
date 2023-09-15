@@ -1,23 +1,27 @@
-import 'package:digilogtv/services/formatting.dart';
 import 'package:flutter/material.dart';
 
 import 'package:digilogtv/services/storage.dart';
+import 'package:digilogtv/services/formatting.dart';
 import 'package:digilogtv/pages/home pages/channellistpage.dart';
 import 'package:digilogtv/pages/home pages/favoritespage.dart';
 import 'package:digilogtv/pages/home%20pages/contactpage.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.storage, required this.formattingProvider,});
+  const HomePage({
+    super.key,
+    required this.storage,
+    required this.formattingProvider,
+  });
 
   final StorageProvider storage;
   final FormattingProvider formattingProvider;
 
   @override
-  State<HomePage> createState() => _HomePageState(storage, formattingProvider,);
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  _HomePageState(this.storage, this.formattingProvider,);
+  _HomePageState();
 
   late StorageProvider storage;
   late FormattingProvider formattingProvider;
@@ -35,10 +39,18 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    storage = widget.storage;
+    formattingProvider = widget.formattingProvider;
     _pages = <Widget>[
       const ContactPage(),
-      ChannelListPage(storage: storage, formattingProvider: formattingProvider,),
-      FavoritesPage(storage: storage, formattingProvider: formattingProvider,),
+      ChannelListPage(
+        storage: storage,
+        formattingProvider: formattingProvider,
+      ),
+      FavoritesPage(
+        storage: storage,
+        formattingProvider: formattingProvider,
+      ),
     ];
   }
 
@@ -50,8 +62,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.indigo[900],
       ),
-      body: Container(
-        child: _pages.elementAt(_selectedIndex)),
+      body: Container(child: _pages.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,

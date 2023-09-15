@@ -3,43 +3,53 @@ import 'package:flutter/material.dart';
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/services/formatting.dart';
 import 'package:digilogtv/services/channels.dart';
-import 'package:digilogtv/pages/channelpage-iptv.dart';
-import 'package:digilogtv/pages/channelpage-youtube.dart';
+import 'package:digilogtv/services/routing.dart';
 
 class ChannelListPage extends StatefulWidget {
-  const ChannelListPage(
-      {super.key, required this.storage, required this.formattingProvider,});
+  const ChannelListPage({
+    super.key,
+    required this.storage,
+    required this.formattingProvider,
+  });
 
   final StorageProvider storage;
   final FormattingProvider formattingProvider;
 
   @override
-  State<ChannelListPage> createState() =>
-      _ChannelListPageState(storage, formattingProvider,);
+  State<ChannelListPage> createState() => _ChannelListPageState();
 }
 
 class _ChannelListPageState extends State<ChannelListPage> {
-  _ChannelListPageState(this.storage, this.formattingProvider,);
+  _ChannelListPageState();
 
   late StorageProvider storage;
   late FormattingProvider formattingProvider;
 
   favoriteIcon(String channelName) {
     if (!storage.favoritedChannels.contains(channelName)) {
-      return Icon(Icons.star_border, color: Colors.indigo[900],);
+      return Icon(
+        Icons.star_border,
+        color: Colors.indigo[900],
+      );
     } else {
-      return Icon(Icons.star, color: Colors.indigo[900],);
+      return Icon(
+        Icons.star,
+        color: Colors.indigo[900],
+      );
     }
   }
 
   favoriteChange(int index) async {
-    if (storage.favoritedChannels.contains(storage.channels.channelList[index].channelName)) {
+    if (storage.favoritedChannels
+        .contains(storage.channels.channelList[index].channelName)) {
       setState(() {
-      storage.favoritedChannels.remove(storage.channels.channelList[index].channelName);
+        storage.favoritedChannels
+            .remove(storage.channels.channelList[index].channelName);
       });
     } else {
       setState(() {
-      storage.favoritedChannels.add(storage.channels.channelList[index].channelName);
+        storage.favoritedChannels
+            .add(storage.channels.channelList[index].channelName);
       });
     }
     await storage.saveChanges();
@@ -47,23 +57,17 @@ class _ChannelListPageState extends State<ChannelListPage> {
 
   goToChannel(int index) {
     if (storage.channels.channelList[index].source == Source.iptv) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ChannelPageIPTV(
-                  index: index,
-                  storage: storage,
-                )));
+      goToChannelPageIPTV(context: context, index: index, storage: storage);
     } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ChannelPageYouTube(
-                  index: index,
-                  storageProvider: storage,
-                )));
+      goToChannelPageYouTube(context: context, index: index, storage: storage);
     }
-    
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    storage = widget.storage;
+    formattingProvider = widget.formattingProvider;
   }
 
   @override
@@ -88,27 +92,33 @@ class _ChannelListPageState extends State<ChannelListPage> {
                   onTap: () => goToChannel(index),
                   child: Card(
                       child: Padding(
-                    padding:
-                        const EdgeInsets.all(18.0),
+                    padding: const EdgeInsets.all(18.0),
                     child: Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 9.0),
-                          child: formattingProvider.formatIcon(storage.channels.channelList[index].source),
+                          child: formattingProvider.formatIcon(
+                              storage.channels.channelList[index].source),
                         ),
                         Expanded(
                           child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 9.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 9.0),
                               child: Text(
                                 storage.channels.channelList[index].channelName,
                                 style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15.0),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15.0),
                               )),
                         ),
                         GestureDetector(
                           onTap: () => favoriteChange(index),
-                          child: Padding(padding: const EdgeInsets.symmetric(horizontal: 9.0),
-                          child: favoriteIcon(storage.channels.channelList[index].channelName),),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 9.0),
+                            child: favoriteIcon(storage
+                                .channels.channelList[index].channelName),
+                          ),
                         ),
                       ],
                     ),

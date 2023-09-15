@@ -8,20 +8,17 @@ import 'package:digilogtv/services/storage.dart';
 
 class ChannelPageYouTube extends StatefulWidget {
   const ChannelPageYouTube(
-      {super.key,
-      required this.index,
-      required this.storageProvider});
+      {super.key, required this.index, required this.storageProvider});
 
   final int index;
   final StorageProvider storageProvider;
 
   @override
-  State<ChannelPageYouTube> createState() =>
-      _ChannelPageYouTubeState(index, storageProvider);
+  State<ChannelPageYouTube> createState() => _ChannelPageYouTubeState();
 }
 
 class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
-  _ChannelPageYouTubeState(this.index, this.storageProvider);
+  _ChannelPageYouTubeState();
 
   late int index;
   late StorageProvider storageProvider;
@@ -29,6 +26,8 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
   @override
   void initState() {
     super.initState();
+    index = widget.index;
+    storageProvider = widget.storageProvider;
     WakelockPlus.enable();
   }
 
@@ -49,24 +48,23 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
         ),
         backgroundColor: Colors.black,
         body: InAppWebView(
-          initialUrlRequest:
-          URLRequest(url: Uri.parse(storageProvider.channels.channelList[index].link)),
+          initialUrlRequest: URLRequest(
+              url: Uri.parse(storageProvider.channels.channelList[index].link)),
           initialOptions: InAppWebViewGroupOptions(
-        crossPlatform: InAppWebViewOptions(
-          mediaPlaybackRequiresUserGesture: false,
-          incognito: true,
-        ),
+            crossPlatform: InAppWebViewOptions(
+              mediaPlaybackRequiresUserGesture: false,
+              incognito: true,
+            ),
           ),
           onEnterFullscreen: (controller) {
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.landscapeLeft,
-          DeviceOrientation.landscapeRight
-        ]);
+            SystemChrome.setPreferredOrientations([
+              DeviceOrientation.landscapeLeft,
+              DeviceOrientation.landscapeRight
+            ]);
           },
           onExitFullscreen: (controller) {
-        SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+            SystemChrome.setPreferredOrientations(DeviceOrientation.values);
           },
-        )
-        );
+        ));
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/services/formatting.dart';
-import 'package:digilogtv/pages/homepage.dart';
+import 'package:digilogtv/services/routing.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -12,20 +12,16 @@ class LoadingPage extends StatefulWidget {
 }
 
 class _LoadingPageState extends State<LoadingPage> {
-
   final StorageProvider storage = StorageProvider();
   final FormattingProvider formatingProvider = FormattingProvider();
 
-  startup () async {
-    storage.initialize();
+  startup() async {
+    await storage.initialize();
     Future.delayed(const Duration(seconds: 1), () async {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (context) => HomePage(
-                  storage: storage,
-                  formattingProvider: formatingProvider,
-                )));
+      goToHomePage(
+          context: context,
+          storage: storage,
+          formatingProvider: formatingProvider);
     });
   }
 

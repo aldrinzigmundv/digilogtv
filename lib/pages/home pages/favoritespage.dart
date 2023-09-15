@@ -3,56 +3,43 @@ import 'package:flutter/material.dart';
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/services/formatting.dart';
 import 'package:digilogtv/services/channels.dart';
-import 'package:digilogtv/pages/channelpage-iptv.dart';
-import 'package:digilogtv/pages/channelpage-youtube.dart';
+import 'package:digilogtv/services/routing.dart';
 
 class FavoritesPage extends StatefulWidget {
-  const FavoritesPage(
-      {super.key,
-      required this.storage,
-      required this.formattingProvider,});
+  const FavoritesPage({
+    super.key,
+    required this.storage,
+    required this.formattingProvider,
+  });
 
   final StorageProvider storage;
   final FormattingProvider formattingProvider;
 
   @override
-  State<FavoritesPage> createState() => _FavoritesPageState(
-      storage, formattingProvider,);
+  State<FavoritesPage> createState() => _FavoritesPageState();
 }
 
 class _FavoritesPageState extends State<FavoritesPage> {
-  _FavoritesPageState(this.storage, this.formattingProvider,);
+  _FavoritesPageState();
 
   late StorageProvider storage;
   late FormattingProvider formattingProvider;
 
   favoriteChange(int index) async {
-      setState(() {
-      storage.favoritedChannels.remove(storage.arrangedChannelList[index].channelName);
+    setState(() {
+      storage.favoritedChannels
+          .remove(storage.arrangedChannelList[index].channelName);
       storage.arrangedChannelList.removeAt(index);
-      });
+    });
     await storage.saveChanges();
   }
 
   goToChannel(int index) {
     if (storage.arrangedChannelList[index].source == Source.iptv) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ChannelPageIPTV(
-                  index: storage.channels.getIndexByChannelName(storage.arrangedChannelList[index].channelName),
-                  storage: storage,
-                )));
+      goToChannelPageIPTV(context: context, index: storage.channels.getIndexByChannelName(storage.arrangedChannelList[index].channelName), storage: storage);
     } else {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ChannelPageYouTube(
-                  index: storage.channels.getIndexByChannelName(storage.arrangedChannelList[index].channelName),
-                  storageProvider: storage,
-                )));
+      goToChannelPageYouTube(context: context, index: storage.channels.getIndexByChannelName(storage.arrangedChannelList[index].channelName), storage: storage);
     }
-    
   }
 
   @override
@@ -62,8 +49,10 @@ class _FavoritesPageState extends State<FavoritesPage> {
 
   @override
   void initState() {
-    storage.initializeFavorites();
     super.initState();
+    storage = widget.storage;
+    formattingProvider = widget.formattingProvider;
+    storage.initializeFavorites();
   }
 
   @override
@@ -90,15 +79,16 @@ class _FavoritesPageState extends State<FavoritesPage> {
                               Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 9.0),
-                                child: formattingProvider
-                                    .formatIcon(storage.arrangedChannelList[index].source),
+                                child: formattingProvider.formatIcon(
+                                    storage.arrangedChannelList[index].source),
                               ),
                               Expanded(
                                 child: Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 9.0),
                                     child: Text(
-                                      storage.arrangedChannelList[index].channelName,
+                                      storage.arrangedChannelList[index]
+                                          .channelName,
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15.0),
@@ -107,8 +97,8 @@ class _FavoritesPageState extends State<FavoritesPage> {
                               GestureDetector(
                                 onTap: () => favoriteChange(index),
                                 child: Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 9.0),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 9.0),
                                   child: Icon(
                                     Icons.star,
                                     color: Colors.indigo[900],
