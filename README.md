@@ -4,9 +4,7 @@
 
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
      alt="Get it on Google Play"
-     height="93">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)[<img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png"
-     alt="Get it at the amazon appstore"
-     height="65">](https://www.amazon.com/dp/B0CH3W25Z1/)
+     height="93">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)
 
 Or download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/thirdbank/releases/latest)
 
