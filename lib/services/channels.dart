@@ -50,7 +50,7 @@ class Channels {
     Channel(channelName: "CNBC", link: "https://www.youtube.com/embed/9NyxcX3rhQs?autoplay=1", source: Source.youtube, contactpage: 'https://help.cnbc.com/contact/'),
     Channel(channelName: "DW English", link: "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8", source: Source.iptv, contactpage: 'https://corporate.dw.com/en/contact/s-30606'),
     Channel(channelName: "Euronews", link: "https://www.youtube.com/embed/pykpO5kQJ98?autoplay=1", source: Source.youtube, contactpage: 'https://www.euronews.com/contact'),
-    Channel(channelName: "France 24 English", link: "https://www.youtube.com/embed/h3MuIUNCCzI?autoplay=1", source: Source.youtube, contactpage: 'https://www.francemediasmonde.com/en/contact'),
+    Channel(channelName: "France 24 English", link: "https://www.youtube.com/embed/tkDUSYHoKxE?autoplay=1", source: Source.youtube, contactpage: 'https://www.francemediasmonde.com/en/contact'),
     Channel(channelName: "Global News", link: "https://i.mjh.nz/PlutoTV/62cbef9ebb857100072fc187-alt.m3u8", source: Source.iptv, contactpage: 'https://globalnews.ca/pages/contact-us/'),
     Channel(channelName: "Newsmax TV", link: "https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8", source: Source.iptv, contactpage: 'https://www.newsmax.com/contact/'),
     Channel(channelName: "NHK World Japan", link: "https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index_4M.m3u8", source: Source.iptv, contactpage: 'https://www3.nhk.or.jp/nhkworld/en/contact/'),

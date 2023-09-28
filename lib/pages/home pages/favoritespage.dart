@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/services/formatting.dart';
 import 'package:digilogtv/services/channels.dart';
@@ -25,6 +27,30 @@ class _FavoritesPageState extends State<FavoritesPage> {
   late StorageProvider storage;
   late FormattingProvider formattingProvider;
 
+  //Google Admob
+  // BannerAd? _bannerAd;
+  // bool _isLoaded = false;
+  // final adUnitId = "XXX";
+  // void loadAd() {
+  //   _bannerAd = BannerAd(
+  //     adUnitId: adUnitId,
+  //     request: const AdRequest(),
+  //     size: AdSize.banner,
+  //     listener: BannerAdListener(
+  //       onAdLoaded: (ad) {
+  //         debugPrint('$ad loaded.');
+  //         setState(() {
+  //           _isLoaded = true;
+  //         });
+  //       },
+  //       onAdFailedToLoad: (ad, err) {
+  //         debugPrint('BannerAd failed to load: $err');
+  //         ad.dispose();
+  //       },
+  //     ),
+  //   )..load();
+  // }
+
   favoriteChange(int index) async {
     setState(() {
       storage.favoritedChannels
@@ -44,6 +70,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
 
   @override
   void dispose() {
+    //await _bannerAd?.dispose();
     super.dispose();
   }
 
@@ -53,6 +80,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
     storage = widget.storage;
     formattingProvider = widget.formattingProvider;
     storage.initializeFavorites();
+    //loadAd();
   }
 
   @override
@@ -62,6 +90,17 @@ class _FavoritesPageState extends State<FavoritesPage> {
             child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              // if (_bannerAd != null)
+              //     Container(
+              //       alignment: Alignment.bottomCenter,
+              //       child: SafeArea(
+              //         child: SizedBox(
+              //           width: _bannerAd!.size.width.toDouble(),
+              //           height: _bannerAd!.size.height.toDouble(),
+              //           child: AdWidget(ad: _bannerAd!),
+              //         ),
+              //       ),
+              //     ),
               ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -110,7 +149,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                         )),
                       ),
                     );
-                  })
+                  }),
             ],
           ))
         : const Center(
