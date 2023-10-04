@@ -1,0 +1,2 @@
+* Resolved issue with France 24 English news channel after changes to their YouTube live link
+* Added ad-support to the Google Play version (disabled by default on GitHub)
