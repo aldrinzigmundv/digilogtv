@@ -51,7 +51,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
   //   )..load();
   // }
 
-  favoriteChange(int index) async {
+  _favoriteChange(int index) async {
     setState(() {
       storage.favoritedChannels
           .remove(storage.arrangedChannelList[index].channelName);
@@ -60,7 +60,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
     await storage.saveChanges();
   }
 
-  goToChannel(int index) {
+  _goToChannel(int index) {
     if (storage.arrangedChannelList[index].source == Source.iptv) {
       goToChannelPageIPTV(context: context, index: storage.channels.getIndexByChannelName(storage.arrangedChannelList[index].channelName), storage: storage);
     } else {
@@ -109,7 +109,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     return Padding(
                       padding: const EdgeInsets.all(3.0),
                       child: GestureDetector(
-                        onTap: () => goToChannel(index),
+                        onTap: () => _goToChannel(index),
                         child: Card(
                             child: Padding(
                           padding: const EdgeInsets.all(18.0),
@@ -134,7 +134,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                     )),
                               ),
                               GestureDetector(
-                                onTap: () => favoriteChange(index),
+                                onTap: () => _favoriteChange(index),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 9.0),

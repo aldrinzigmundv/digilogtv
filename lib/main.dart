@@ -8,11 +8,8 @@ void main() {
   // WidgetsFlutterBinding.ensureInitialized();
   // MobileAds.instance.initialize();
 
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     title: "Digilog TV",
-    initialRoute: '/',
-    routes: {
-      '/': (context) => const LoadingPage(),
-    },
+    home: LoadingPage(),
   ));
 }

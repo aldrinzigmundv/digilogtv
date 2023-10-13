@@ -15,7 +15,7 @@ class _LoadingPageState extends State<LoadingPage> {
   final StorageProvider storage = StorageProvider();
   final FormattingProvider formatingProvider = FormattingProvider();
 
-  startup() async {
+  _startup() async {
     await storage.initialize();
     Future.delayed(const Duration(seconds: 1), () async {
       goToHomePage(
@@ -28,7 +28,7 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    startup();
+    _startup();
   }
 
   @override
@@ -40,7 +40,7 @@ class _LoadingPageState extends State<LoadingPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-                padding: EdgeInsets.all(9.0),
+                padding: const EdgeInsets.all(9.0),
                 child: Image.asset('assets/icons/icon.png')),
             const Padding(
               padding: EdgeInsets.all(9.0),

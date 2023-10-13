@@ -27,6 +27,15 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
 
   bool _appBarVisibility = true;
 
+  _setupVideoPlayerController() {
+    _videoPlayerController = VideoPlayerController.networkUrl(
+        Uri.parse(storage.channels.channelList[index].link))
+      ..initialize().then((_) {
+        setState(() {});
+        _videoPlayerController.play();
+      });
+  }
+
   _hideUnhideAppBar() {
     setState(() {
       _appBarVisibility = !_appBarVisibility;
@@ -50,12 +59,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
     index = widget.index;
     storage = widget.storage;
     WakelockPlus.enable();
-    _videoPlayerController = VideoPlayerController.networkUrl(
-        Uri.parse(storage.channels.channelList[index].link))
-      ..initialize().then((_) {
-        setState(() {});
-        _videoPlayerController.play();
-      });
+    _setupVideoPlayerController();
   }
 
   @override

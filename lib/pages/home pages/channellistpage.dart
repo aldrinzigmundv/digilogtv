@@ -51,7 +51,7 @@ class _ChannelListPageState extends State<ChannelListPage> {
   //   )..load();
   // }
 
-  favoriteIcon(String channelName) {
+  _favoriteIcon(String channelName) {
     if (!storage.favoritedChannels.contains(channelName)) {
       return Icon(
         Icons.star_border,
@@ -65,7 +65,7 @@ class _ChannelListPageState extends State<ChannelListPage> {
     }
   }
 
-  favoriteChange(int index) async {
+  _favoriteChange(int index) async {
     if (storage.favoritedChannels
         .contains(storage.channels.channelList[index].channelName)) {
       setState(() {
@@ -81,7 +81,7 @@ class _ChannelListPageState extends State<ChannelListPage> {
     await storage.saveChanges();
   }
 
-  goToChannel(int index) {
+  _goToChannel(int index) {
     if (storage.channels.channelList[index].source == Source.iptv) {
       goToChannelPageIPTV(context: context, index: index, storage: storage);
     } else {
@@ -128,7 +128,7 @@ class _ChannelListPageState extends State<ChannelListPage> {
               return Padding(
                 padding: const EdgeInsets.all(3.0),
                 child: GestureDetector(
-                  onTap: () => goToChannel(index),
+                  onTap: () => _goToChannel(index),
                   child: Card(
                       child: Padding(
                     padding: const EdgeInsets.all(18.0),
@@ -151,11 +151,11 @@ class _ChannelListPageState extends State<ChannelListPage> {
                               )),
                         ),
                         GestureDetector(
-                          onTap: () => favoriteChange(index),
+                          onTap: () => _favoriteChange(index),
                           child: Padding(
                             padding:
                                 const EdgeInsets.symmetric(horizontal: 9.0),
-                            child: favoriteIcon(storage
+                            child: _favoriteIcon(storage
                                 .channels.channelList[index].channelName),
                           ),
                         ),
