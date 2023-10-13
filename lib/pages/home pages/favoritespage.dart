@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/services/formatting.dart';
@@ -69,8 +69,8 @@ class _FavoritesPageState extends State<FavoritesPage> {
   }
 
   @override
-  void dispose() {
-    //await _bannerAd?.dispose();
+  void dispose() async {
+    // await _bannerAd?.dispose();
     super.dispose();
   }
 
@@ -80,7 +80,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
     storage = widget.storage;
     formattingProvider = widget.formattingProvider;
     storage.initializeFavorites();
-    //loadAd();
+    // loadAd();
   }
 
   @override

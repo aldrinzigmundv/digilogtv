@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//import 'package:google_mobile_ads/google_mobile_ads.dart';
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'package:digilogtv/services/storage.dart';
 import 'package:digilogtv/services/formatting.dart';
@@ -94,12 +94,12 @@ class _ChannelListPageState extends State<ChannelListPage> {
     super.initState();
     storage = widget.storage;
     formattingProvider = widget.formattingProvider;
-    //loadAd();
+    // loadAd();
   }
 
   @override
   void dispose() async {
-    //await _bannerAd?.dispose();
+    // await _bannerAd?.dispose();
     super.dispose();
   }
 

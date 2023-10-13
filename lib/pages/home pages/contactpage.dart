@@ -30,7 +30,7 @@ class ContactPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.fromLTRB(18.0, 36.0, 18.0, 18.0),
               child: Text(
-                'You have downloaded the ad-free version of this app. Other ads are provided by their respective TV news channels.',
+                'You have downloaded the ad-free version of Digilog TV. Other ads are provided by their respective TV news channels.',
                 style: TextStyle(fontSize: 18.0),
                 textAlign: TextAlign.center,
               ),
@@ -38,7 +38,7 @@ class ContactPage extends StatelessWidget {
             // const Padding(
             //   padding: EdgeInsets.fromLTRB(18.0, 36.0, 18.0, 18.0),
             //   child: Text(
-            //     'You have downloaded the ad-supported version of this app from Google Play. An ad-free version is available on GitHub. Other ads are provided by their respective TV news channels.',
+            //     'You have downloaded the ad-supported version of Digilog TV from Google Play. An ad-free version is available on GitHub. Other ads are provided by their respective TV news channels.',
             //     style: TextStyle(fontSize: 18.0),
             //     textAlign: TextAlign.center,
             //   ),
