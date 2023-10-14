@@ -6,7 +6,7 @@
      alt="Get it on Google Play"
      height="93">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)
 
-Or download the latest ad-free APK version from the [Releases Section](https://github.com/aldrinzigmundv/thirdbank/releases/latest)
+Or download the latest ad-free APK version from the [Releases Section](https://github.com/aldrinzigmundv/digilogtv/releases/latest)
 
 ## What is Digilog TV?
 
