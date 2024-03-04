@@ -25,7 +25,7 @@ For news channel suggestions, please file an issue on both Free-TV/IPTV and our 
 * Convenient favorites list for quick access to your preferred channels
 * Includes only free, legal, and publicly available content
 
-## Donate BTC or XMR to Support in Maintaining this App
+## Donate XMR to Support Maintaining this App
 
 Donate XMR to Support this App
 
