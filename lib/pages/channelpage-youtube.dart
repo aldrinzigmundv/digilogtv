@@ -43,8 +43,10 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
     return Scaffold(
         appBar: AppBar(
           title: Text(storageProvider.channels.channelList[index].channelName),
+          titleTextStyle: const TextStyle(color: Colors.white),
           centerTitle: true,
           backgroundColor: Colors.indigo[900],
+          foregroundColor: Colors.white,
         ),
         backgroundColor: Colors.black,
         body: InAppWebView(

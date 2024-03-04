@@ -63,7 +63,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
   }
 
   @override
-  void dispose() async {
+  void dispose() {
     WakelockPlus.disable();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
@@ -77,8 +77,10 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
         appBar: _appBarVisibility
             ? AppBar(
                 title: Text(storage.channels.channelList[index].channelName),
+                titleTextStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                 centerTitle: true,
                 backgroundColor: Colors.indigo[900],
+                foregroundColor: Colors.white,
               )
             : null,
         backgroundColor: Colors.black,

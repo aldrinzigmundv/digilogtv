@@ -6,7 +6,9 @@
      alt="Get it on Google Play"
      height="93">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)
 
-Or download the latest ad-free APK version from the [Releases Section](https://github.com/aldrinzigmundv/digilogtv/releases/latest)
+Or download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/digilogtv/releases/latest)
+
+**This app is powered by aldrinzigmund.com**
 
 ## What is Digilog TV?
 
@@ -24,12 +26,6 @@ For news channel suggestions, please file an issue on both Free-TV/IPTV and our 
 * Includes only free, legal, and publicly available content
 
 ## Donate BTC or XMR to Support in Maintaining this App
-
-Donate BTC to Support this App
-
-<img src="assets/images/bitcoin.png" alt="BTC Wallet QR Code" width="300" height="300">
-
-bc1qruus6vnxrww6pqac3hvg6vsepmqv8d66dwjm59
 
 Donate XMR to Support this App
 

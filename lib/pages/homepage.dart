@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Digilog TV'),
+        titleTextStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         centerTitle: true,
         backgroundColor: Colors.indigo[900],
       ),

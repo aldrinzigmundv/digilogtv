@@ -1,26 +1,17 @@
-import 'package:mobx/mobx.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:digilogtv/services/channels.dart';
 
-part 'storage.g.dart';
-
-class StorageProvider = _StorageProvider with _$StorageProvider;
-
-abstract class _StorageProvider with Store {
+class StorageProvider {
 
   late SharedPreferences storage;
 
-  late Channels channels = Channels();
+  Channels channels = Channels();
 
-  @observable
   List<Channel> arrangedChannelList = [];
 
-  @observable
-  late List<String> favoritedChannels = [];
+  List<String> favoritedChannels = [];
 
-  @action
   initialize() async {
     storage = await SharedPreferences.getInstance();
     storage.reload();
@@ -29,13 +20,19 @@ abstract class _StorageProvider with Store {
     channels = Channels();
   }
 
-  @action
   initializeFavorites() {
     arrangedChannelList = channels.getMatchingChannels(favoritedChannels);
   }
 
-  @action
   saveChanges () async {
     await storage.setStringList('favorite channels', favoritedChannels);
+  }
+
+  String? getLastVersion() {
+    return storage.getString('last version');
+  }
+
+  updateVersion(String version) async {
+    await storage.setString('last version', version);
   }
 }
