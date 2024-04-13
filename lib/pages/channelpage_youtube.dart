@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:digilogtv/services/storage.dart';
+
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
-import 'package:digilogtv/services/storage.dart';
-
 class ChannelPageYouTube extends StatefulWidget {
   const ChannelPageYouTube(
-      {super.key, required this.index, required this.storageProvider});
+      {super.key,
+      required this.index,
+      required this.storageProvider,
+      required this.isTV});
 
   final int index;
   final StorageProvider storageProvider;
+  final bool isTV;
 
   @override
   State<ChannelPageYouTube> createState() => _ChannelPageYouTubeState();
@@ -22,32 +26,39 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
 
   late int index;
   late StorageProvider storageProvider;
+  late bool isTV;
 
   @override
   void initState() {
     super.initState();
     index = widget.index;
     storageProvider = widget.storageProvider;
+    isTV = widget.isTV;
     WakelockPlus.enable();
   }
 
   @override
   void dispose() {
     WakelockPlus.disable();
-    SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+    if (!isTV) {
+      SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+    }
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(storageProvider.channels.channelList[index].channelName),
-          titleTextStyle: const TextStyle(color: Colors.white),
-          centerTitle: true,
-          backgroundColor: Colors.indigo[900],
-          foregroundColor: Colors.white,
-        ),
+        appBar: (isTV)
+            ? null
+            : AppBar(
+                title: Text(
+                    storageProvider.channels.channelList[index].channelName),
+                titleTextStyle: const TextStyle(color: Colors.white),
+                centerTitle: true,
+                backgroundColor: Colors.indigo[900],
+                foregroundColor: Colors.white,
+              ),
         backgroundColor: Colors.black,
         body: InAppWebView(
           initialUrlRequest: URLRequest(

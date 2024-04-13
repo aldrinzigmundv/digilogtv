@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:digilogtv/services/storage.dart';
+
 import 'package:video_player/video_player.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
-import 'package:digilogtv/services/storage.dart';
-
 class ChannelPageIPTV extends StatefulWidget {
   const ChannelPageIPTV(
-      {super.key, required this.index, required this.storage});
+      {super.key,
+      required this.index,
+      required this.storage,
+      required this.isTV});
 
   final int index;
   final StorageProvider storage;
+  final bool isTV;
 
   @override
   State<ChannelPageIPTV> createState() => _ChannelPageIPTVState();
@@ -22,6 +26,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
 
   late int index;
   late StorageProvider storage;
+  late bool isTV;
 
   late VideoPlayerController _videoPlayerController;
 
@@ -37,20 +42,22 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
   }
 
   _hideUnhideAppBar() {
-    setState(() {
-      _appBarVisibility = !_appBarVisibility;
-      if (!_appBarVisibility) {
-        SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.landscapeLeft,
-          DeviceOrientation.landscapeRight
-        ]);
-      } else {
-        SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-            overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
-        SystemChrome.setPreferredOrientations(DeviceOrientation.values);
-      }
-    });
+    if (!isTV) {
+      setState(() {
+        _appBarVisibility = !_appBarVisibility;
+        if (!_appBarVisibility) {
+          SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+          SystemChrome.setPreferredOrientations([
+            DeviceOrientation.landscapeLeft,
+            DeviceOrientation.landscapeRight
+          ]);
+        } else {
+          SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+              overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+          SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+        }
+      });
+    }
   }
 
   @override
@@ -58,6 +65,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
     super.initState();
     index = widget.index;
     storage = widget.storage;
+    isTV = widget.isTV;
     WakelockPlus.enable();
     _setupVideoPlayerController();
   }
@@ -65,8 +73,10 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
   @override
   void dispose() {
     WakelockPlus.disable();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+    if (!isTV) {
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+    }
     _videoPlayerController.dispose();
     super.dispose();
   }
@@ -74,15 +84,19 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: _appBarVisibility
-            ? AppBar(
-                title: Text(storage.channels.channelList[index].channelName),
-                titleTextStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                centerTitle: true,
-                backgroundColor: Colors.indigo[900],
-                foregroundColor: Colors.white,
-              )
-            : null,
+        appBar: (isTV)
+            ? null
+            : _appBarVisibility
+                ? AppBar(
+                    title:
+                        Text(storage.channels.channelList[index].channelName),
+                    titleTextStyle: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                    centerTitle: true,
+                    backgroundColor: Colors.indigo[900],
+                    foregroundColor: Colors.white,
+                  )
+                : null,
         backgroundColor: Colors.black,
         body: GestureDetector(
           onTap: () => _hideUnhideAppBar(),
@@ -96,8 +110,9 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
                     child: CircularProgressIndicator()),
           ),
         ),
-        bottomNavigationBar:
-            (MediaQuery.of(context).orientation == Orientation.portrait)
+        bottomNavigationBar: (isTV)
+            ? null
+            : (MediaQuery.of(context).orientation == Orientation.portrait)
                 ? Padding(
                     padding: const EdgeInsets.all(27.0),
                     child: Text(

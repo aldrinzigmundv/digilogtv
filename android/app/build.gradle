@@ -58,8 +58,8 @@ android {
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 20
         targetSdkVersion 33
-        versionCode 8
-        versionName "1.9.2"
+        versionCode 9
+        versionName "2.0.0"
         multiDexEnabled true
     }
 signingConfigs {
@@ -85,4 +85,5 @@ flutter {
 
 dependencies {
     implementation 'com.android.support:multidex:1.0.3'
+    implementation "androidx.activity:activity:1.6.0-alpha05"
 }

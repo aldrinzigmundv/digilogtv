@@ -1,9 +1,8 @@
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:digilogtv/services/channels.dart';
 
-class StorageProvider {
+import 'package:shared_preferences/shared_preferences.dart';
 
+class StorageProvider {
   late SharedPreferences storage;
 
   Channels channels = Channels();
@@ -15,7 +14,8 @@ class StorageProvider {
   initialize() async {
     storage = await SharedPreferences.getInstance();
     storage.reload();
-    List<String>? retrievedFavoritedChannels = storage.getStringList('favorite channels');
+    List<String>? retrievedFavoritedChannels =
+        storage.getStringList('favorite channels');
     favoritedChannels = retrievedFavoritedChannels ?? [];
     channels = Channels();
   }
@@ -24,7 +24,7 @@ class StorageProvider {
     arrangedChannelList = channels.getMatchingChannels(favoritedChannels);
   }
 
-  saveChanges () async {
+  saveChanges() async {
     await storage.setStringList('favorite channels', favoritedChannels);
   }
 

@@ -16,7 +16,7 @@ class UpdateManager {
   }
 
   getUpdateMessage() {
-    return "This new update includes updates to Digilog TV channels. Thanks to our free, legal, and publicly available content provider - Free-TV/IPTV on GitHub.";
+    return "Added compatibility to Google and Android TVs. Updated the Digilog TV channel list, thanks to our free, legal, and publicly available content provider - Free-TV/IPTV on GitHub.";
   }
 
   removeUpdate(StorageProvider storage) async {
