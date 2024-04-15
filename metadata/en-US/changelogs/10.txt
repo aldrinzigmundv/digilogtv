@@ -1,0 +1,1 @@
+* Resolved issue preventing the Digilog TV app from appearing in TV launchers
