@@ -16,7 +16,7 @@ class UpdateManager {
   }
 
   getUpdateMessage() {
-    return "Added compatibility to Google and Android TVs. Updated the Digilog TV channel list, thanks to our free, legal, and publicly available content provider - Free-TV/IPTV on GitHub.";
+    return "Fixed issue with Google and Android TV interface sometimes appearing on Android phones.";
   }
 
   removeUpdate(StorageProvider storage) async {

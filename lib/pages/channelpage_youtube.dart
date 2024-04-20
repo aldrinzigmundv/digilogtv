@@ -33,7 +33,6 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
     super.initState();
     index = widget.index;
     storageProvider = widget.storageProvider;
-    isTV = widget.isTV;
     WakelockPlus.enable();
   }
 
@@ -48,6 +47,7 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
 
   @override
   Widget build(BuildContext context) {
+    isTV = widget.isTV;
     return Scaffold(
         appBar: (isTV)
             ? null

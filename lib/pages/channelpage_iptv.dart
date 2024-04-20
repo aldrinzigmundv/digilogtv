@@ -65,7 +65,6 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
     super.initState();
     index = widget.index;
     storage = widget.storage;
-    isTV = widget.isTV;
     WakelockPlus.enable();
     _setupVideoPlayerController();
   }
@@ -83,6 +82,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
 
   @override
   Widget build(BuildContext context) {
+    isTV = widget.isTV;
     return Scaffold(
         appBar: (isTV)
             ? null
