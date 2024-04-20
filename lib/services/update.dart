@@ -16,7 +16,7 @@ class UpdateManager {
   }
 
   getUpdateMessage() {
-    return "Fixed issue with Google and Android TV interface sometimes appearing on Android phones.";
+    return "Fixed a bug causing TV interface to appear on phones.";
   }
 
   removeUpdate(StorageProvider storage) async {
