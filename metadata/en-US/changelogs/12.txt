@@ -1,0 +1,2 @@
+* Updated channels from Free-TV/IPTV
+* Upgraded dependecies
