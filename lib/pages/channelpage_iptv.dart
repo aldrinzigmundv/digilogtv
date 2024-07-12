@@ -62,6 +62,7 @@ class _ChannelPageIPTVState extends State<ChannelPageIPTV> {
 
   @override
   void initState() {
+    isTV = widget.isTV;
     super.initState();
     index = widget.index;
     storage = widget.storage;

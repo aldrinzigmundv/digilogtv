@@ -30,6 +30,7 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
 
   @override
   void initState() {
+    isTV = widget.isTV;
     super.initState();
     index = widget.index;
     storageProvider = widget.storageProvider;
@@ -62,12 +63,10 @@ class _ChannelPageYouTubeState extends State<ChannelPageYouTube> {
         backgroundColor: Colors.black,
         body: InAppWebView(
           initialUrlRequest: URLRequest(
-              url: Uri.parse(storageProvider.channels.channelList[index].link)),
-          initialOptions: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(
-              mediaPlaybackRequiresUserGesture: false,
-              incognito: true,
-            ),
+              url: WebUri(storageProvider.channels.channelList[index].link)),
+          initialSettings: InAppWebViewSettings(
+            mediaPlaybackRequiresUserGesture: false,
+            incognito: true,
           ),
           onEnterFullscreen: (controller) {
             SystemChrome.setPreferredOrientations([

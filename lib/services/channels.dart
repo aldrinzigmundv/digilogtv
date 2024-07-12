@@ -70,7 +70,7 @@ class Channels {
     Channel(
         channelName: "CBS News",
         link:
-            "https://cbsnews.akamaized.net/hls/live/2020607/cbsnlineup_8/master.m3u8",
+            "https://cbsn-us.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master.m3u8",
         source: Source.iptv,
         contactpage: 'https://www.cbs.com/showfeedback/'),
     Channel(
@@ -84,12 +84,6 @@ class Channels {
         source: Source.youtube,
         contactpage: 'https://help.cnbc.com/contact/'),
     Channel(
-        channelName: "CNN",
-        link:
-            "https://raw.githubusercontent.com/Alstruit/adaptive-streams/alstruit-10_23_us/streams/us/CNNUSA.us.m3u8",
-        source: Source.iptv,
-        contactpage: 'https://help.cnn.com/us/ContactUs'),
-    Channel(
         channelName: "DW English",
         link:
             "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
@@ -98,7 +92,7 @@ class Channels {
     Channel(
         channelName: "Euronews",
         link:
-            "https://shls-live-ak.akamaized.net/out/v1/115bfcde8fa342d182ef846445cdbdcf/index.m3u8",
+            "https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live3/euronews_720p/playlist.m3u8",
         source: Source.iptv,
         contactpage: 'https://www.euronews.com/contact'),
     Channel(
@@ -114,7 +108,7 @@ class Channels {
         contactpage: "https://www.gbnews.com/about-us/contact-us"),
     Channel(
         channelName: "Global News",
-        link: "https://i.mjh.nz/PlutoTV/62cbef9ebb857100072fc187-alt.m3u8",
+        link: "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62cbef9ebb857100072fc187/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7a7bb2-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=28cf81a2-fc9d-48d7-8d50-3eebbcf68d91",
         source: Source.iptv,
         contactpage: 'https://globalnews.ca/pages/contact-us/'),
     Channel(
@@ -162,11 +156,6 @@ class Channels {
             "https://content.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8",
         source: Source.iptv,
         contactpage: 'https://support.scrippsnews.com/support/tickets/new'),
-    Channel(
-        channelName: "Sky News",
-        link: "https://i.mjh.nz/PlutoTV/55b285cd2665de274553d66f-alt.m3u8",
-        source: Source.iptv,
-        contactpage: 'https://news.sky.com/info/contact-us'),
     Channel(
         channelName: "The Guardian",
         link: "https://rakuten-guardian-1-ie.samsung.wurl.tv/playlist.m3u8",

@@ -43,7 +43,7 @@ class _LoadingPageState extends State<LoadingPage> {
               focusNode: _focusNode,
               onFocusChange: (_) => _returnDialogBoxFocus,
               style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                foregroundColor: WidgetStateProperty.all<Color>(Colors.blue),
               ),
               onPressed: () => _closeUpdateDialogBox(),
               child: const Text('OK'),

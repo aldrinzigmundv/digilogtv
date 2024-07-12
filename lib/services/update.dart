@@ -16,7 +16,7 @@ class UpdateManager {
   }
 
   getUpdateMessage() {
-    return "Fixed a bug causing TV interface to appear on phones.";
+    return "Updated the Digilog TV channel list. Thanks to our free, legal, and publicly available content provider - Free-TV/IPTV on GitHub.";
   }
 
   removeUpdate(StorageProvider storage) async {
