@@ -49,16 +49,16 @@ class TopNavButton extends StatelessWidget {
                 formattingProvider: formattingProvider,
                 isTV: true),
             child: Card(
-              color: index == focusedIndex ? Colors.blue[300] : null,
+              color: index == focusedIndex ? Colors.indigo[900] : null,
               elevation: 3.0,
-              shadowColor: Colors.blue,
+              shadowColor: Colors.indigo[900],
               child: Padding(
                 padding: const EdgeInsets.all(7.0),
                 child: Text(
                   label,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold, color: index == focusedIndex ? Colors.white : null),
                 ),
               ),
             ),

@@ -2,9 +2,9 @@
 
 <img src="screenshots/screenshot1.png" alt="Screenshot 1" width="270" height="602"><img src="screenshots/screenshot2.png" alt="Screenshot 2" width="270" height="602"><img src="screenshots/screenshot3.png" alt="Screenshot 3" width="270" height="602">
 
-[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+[<img src="badges/GetItOnGooglePlay_Badge_Web_color_English.png"
      alt="Get it on Google Play"
-     height="93">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)
+     height="63">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)
 
 Or download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/digilogtv/releases/latest)
 

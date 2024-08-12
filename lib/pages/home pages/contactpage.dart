@@ -59,7 +59,7 @@ class _ContactPageState extends State<ContactPage> {
                 const Padding(
                   padding: EdgeInsets.fromLTRB(18.0, 36.0, 18.0, 18.0),
                   child: SelectableText(
-                    'You can reach me at aldrinzigmund@tutamail.com',
+                    'You can reach us at support@aldrinzigmund.com',
                     style:
                         TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,

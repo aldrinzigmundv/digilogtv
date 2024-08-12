@@ -43,7 +43,7 @@ class Channels {
     Channel(
         channelName: "ABC News",
         link:
-            "https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8",
+            "https://lnc-abc-news.tubi.video/index.m3u8",
         source: Source.iptv,
         contactpage: 'https://abcnews.go.com/Contact'),
     Channel(
@@ -51,6 +51,11 @@ class Channels {
         link: "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
         source: Source.iptv,
         contactpage: 'https://network.aljazeera.net/en/contact'),
+    Channel(
+        channelName: "BBC News",
+        link: "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65d92a8c8b24c80008e285c0/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c26f5a2-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=9f1a48db-9022-43d1-bb25-ba665285192f",
+        source: Source.iptv,
+        contactpage: 'https://www.bbc.co.uk/contact/questions/getting-in-touch/contact-bbc'),
     Channel(
         channelName: "Bloomberg",
         link: "https://bloomberg.com/media-manifest/streams/us.m3u8",
@@ -64,7 +69,7 @@ class Channels {
     Channel(
         channelName: "CBC News Network",
         link:
-            "https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxcbcnews/CDN/playlist.m3u8",
+            "https://lnc-cbc2.tubi.video/master.m3u8",
         source: Source.iptv,
         contactpage: 'https://cbchelp.cbc.ca/hc/en-ca/requests/new'),
     Channel(
@@ -146,14 +151,9 @@ class Channels {
         source: Source.iptv,
         contactpage: 'https://www.presstv.ir/aboutus/contactus'),
     Channel(
-        channelName: "Russia Today",
-        link: "https://rt-glb.rttv.com/live/rtnews/playlist.m3u8",
-        source: Source.iptv,
-        contactpage: 'https://www.rt.com/about-us/contact-info/'),
-    Channel(
         channelName: "Scripps News",
         link:
-            "https://content.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8",
+            "https://livetv-fa.tubi.video/scripps-news/playlist.m3u8",
         source: Source.iptv,
         contactpage: 'https://support.scrippsnews.com/support/tickets/new'),
     Channel(
