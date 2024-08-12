@@ -29,7 +29,7 @@ class TopNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TopNavButton(
-            label: "Contact Me",
+            label: "Contact Us",
             index: 0,
             focusedIndex: focusedIndex,
             updateFocus: updateFocus,
