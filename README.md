@@ -8,7 +8,7 @@
 
 Or download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/digilogtv/releases/latest)
 
-**This app is powered by aldrinzigmund.com**
+**This app is powered by [aldrinzigmund.com](https://www.aldrinzigmund.com/)**
 
 ## What is Digilog TV?
 
