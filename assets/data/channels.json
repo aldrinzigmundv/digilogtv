@@ -1,0 +1,164 @@
+[
+    {
+        "channelName": "ABC News",
+        "link": "https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8",
+        "source": "iptv",
+        "contactpage": "https://abcnews.go.com/Contact"
+    },
+    {
+        "channelName": "ABC News Australia",
+        "link": "https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8",
+        "source": "iptv",
+        "contactpage": "https://help.abc.net.au/hc/en-us/requests/new?ticket_form_id=360000036795"
+    },
+    {
+        "channelName": "Al Jazeera English",
+        "link": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
+        "source": "iptv",
+        "contactpage": "https://network.aljazeera.net/en/contact"
+    },
+    {
+        "channelName": "BBC News",
+        "link": "https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/t=3840/v=pv14/b=5070016/main.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.bbc.co.uk/contact/questions/getting-in-touch/contact-bbc"
+    },
+    {
+        "channelName": "Bloomberg",
+        "link": "https://bloomberg.com/media-manifest/streams/us.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.bloomberg.com/professional/support/"
+    },
+    {
+        "channelName": "Bloomberg+",
+        "link": "https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.bloomberg.com/professional/support/"
+    },
+    {
+        "channelName": "CBS News",
+        "link": "https://cbsn-us.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.cbs.com/showfeedback/"
+    },
+    {
+        "channelName": "Channel News Asia",
+        "link": "https://ythls.armelin.one/channel/UC83jt4dlz1Gjl58fzQrrKZg.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.channelnewsasia.com/contact-us"
+    },
+    {
+        "channelName": "Cheddar News",
+        "link": "https://livestream.chdrstatic.com/b93e5b0d43ea306310a379971e384964acbe4990ce193c0bd50078275a9a657d/cheddar-42620/cheddarweblive/cheddar/index.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.cheddar.com/media/about-cheddar/"
+    },
+    {
+        "channelName": "CNBC",
+        "link": "https://www.youtube.com/embed/9NyxcX3rhQs?autoplay=1",
+        "source": "youtube",
+        "contactpage": "https://help.cnbc.com/contact/"
+    },
+    {
+        "channelName": "CNN International",
+        "link": "https://cnn-cnninternational-1-eu.rakuten.wurl.tv/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://help.cnn.com/us/Feedback"
+    },
+    {
+        "channelName": "DW English",
+        "link": "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8",
+        "source": "iptv",
+        "contactpage": "https://corporate.dw.com/en/contact/s-30606"
+    },
+    {
+        "channelName": "Euronews",
+        "link": "https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live3/euronews_720p/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.euronews.com/contact"
+    },
+    {
+        "channelName": "France 24 English",
+        "link": "https://ythls.armelin.one/channel/UCQfwfsi5VrQ8yKZ-UWmAEFg.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.francemediasmonde.com/en/contact"
+    },
+    {
+        "channelName": "GB News",
+        "link": "https://live-gbnews.simplestreamcdn.com/live5/gbnews/bitrate1.isml/manifest.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.gbnews.com/about-us/contact-us"
+    },
+    {
+        "channelName": "Global News",
+        "link": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/62cbef9ebb857100072fc187/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7a7bb2-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=28cf81a2-fc9d-48d7-8d50-3eebbcf68d91",
+        "source": "iptv",
+        "contactpage": "https://globalnews.ca/pages/contact-us/"
+    },
+    {
+        "channelName": "i24 News",
+        "link": "https://bcovlive-a.akamaihd.net/6e3dd61ac4c34d6f8fb9698b565b9f50/eu-central-1/5377161796001/playlist-all_dvr.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.i24news.tv/en/contact"
+    },
+    {
+        "channelName": "LiveNOW from FOX",
+        "link": "http://fox-foxnewsnow-samsungus.amagi.tv/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.livenowfox.com/contact-us"
+    },
+    {
+        "channelName": "NBC News Now",
+        "link": "https://dai2.xumo.com/amagi_hls_data_xumo1212A-xumo-nbcnewsnow/CDN/master.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.nbcnews.com/information/nbc-news-info/contact-us-n1232521"
+    },
+    {
+        "channelName": "Newsmax TV",
+        "link": "https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.newsmax.com/contact/"
+    },
+    {
+        "channelName": "NHK World Japan",
+        "link": "https://ythls.armelin.one/channel/UCSPEjw8F2nQDtmUKPFNF7_A.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www3.nhk.or.jp/nhkworld/en/contact/"
+    },
+    {
+        "channelName": "Sky News",
+        "link": "https://skynewsau-live.akamaized.net/hls/live/2002689/skynewsau-extra1/master.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.skynews.com.au/yoursay-contact-sky-news"
+    },
+    {
+        "channelName": "Scripps News",
+        "link": "https://livetv-fa.tubi.video/scripps-news/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://support.scrippsnews.com/support/tickets/new"
+    },
+    {
+        "channelName": "The Guardian",
+        "link": "https://rakuten-guardian-1-ie.samsung.wurl.tv/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.theguardian.com/help/contact-us"
+    },
+    {
+        "channelName": "Ticker",
+        "link": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01486-tickernews-tickernewsweb-ono/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://tickernews.co/contact-ticker/"
+    },
+    {
+        "channelName": "TRT World",
+        "link": "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.trtworld.com/contact"
+    },
+    {
+        "channelName": "Yahoo! Finance",
+        "link": "https://d1ewctnvcwvvvu.cloudfront.net/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://yahoo.uservoice.com/forums/382977"
+    }
+]
