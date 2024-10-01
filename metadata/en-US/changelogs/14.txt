@@ -1,0 +1,3 @@
+- Faster channel updates via GitHub—no app update needed anymore!
+- Improved support for Google and Android TV.
+- Non-disruptive ads added (PlayStore version only) to support future development plans.

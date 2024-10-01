@@ -5,6 +5,9 @@
 [<img src="badges/GetItOnGooglePlay_Badge_Web_color_English.png"
      alt="Get it on Google Play"
      height="63">](https://play.google.com/store/apps/details?id=io.github.aldrinzigmundv.digilogtv)
+[<img src="badges/IzzyOnDroid2.png"
+     alt="Get it on Google Play"
+     height="63">](https://apt.izzysoft.de/packages/io.github.aldrinzigmundv.digilogtv/)
 
 Or download the latest APK from the [Releases Section](https://github.com/aldrinzigmundv/digilogtv/releases/latest)
 

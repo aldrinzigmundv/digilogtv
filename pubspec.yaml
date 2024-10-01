@@ -10,10 +10,11 @@ dependencies:
   device_info_plus: ^10.0.1
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.5
-  flutter_hooks: ^0.20.5
   flutter_inappwebview: ^6.0.0
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: ^0.14.1
+  #google_mobile_ads: ^5.1.0
+  hive_flutter: ^1.1.0
+  http: ^1.2.2
   package_info_plus: ^8.0.0
   provider: ^6.1.2
   shared_preferences: ^2.2.0
@@ -23,7 +24,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -48,3 +49,4 @@ flutter:
 
   assets:
     - assets/icons/icon.png
+    - assets/data/channels.json

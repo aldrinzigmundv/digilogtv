@@ -1,23 +1,22 @@
+import 'package:digilogtv/models/channel.dart';
 import 'package:flutter/material.dart';
-
 import 'package:digilogtv/services/storage.dart';
-import 'package:digilogtv/services/formatting.dart';
-import 'package:digilogtv/services/channels.dart';
 import 'package:digilogtv/services/routing.dart';
-import 'package:digilogtv/services/dpadoption.dart';
-import 'package:digilogtv/pages/home%20pages/home%20pages%20widgets/mainappbar.dart';
-import 'package:digilogtv/pages/home%20pages/home%20pages%20widgets/topnavbar.dart';
+import 'package:digilogtv/widgets/home%20pages%20widgets/mainappbar.dart';
+import 'package:digilogtv/widgets/home%20pages%20widgets/topnavbar.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:digilogtv/widgets/channellistitem.dart';
+
+//AdmobCode
+// import 'package:google_mobile_ads/google_mobile_ads.dart';
+//AdmobCode
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({
     super.key,
-    required this.storage,
-    required this.formattingProvider,
     required this.isTV,
   });
 
-  final StorageProvider storage;
-  final FormattingProvider formattingProvider;
   final bool isTV;
 
   @override
@@ -25,177 +24,212 @@ class FavoritesPage extends StatefulWidget {
 }
 
 class _FavoritesPageState extends State<FavoritesPage> {
-  _FavoritesPageState();
-
-  late StorageProvider storage;
-  late FormattingProvider formattingProvider;
+  StorageProvider storageProvider = StorageProvider();
   late bool isTV;
   int _focusedIndex = 2;
 
+  //AdmobCode
+  // BannerAd? _bannerAd;
+  //AdmobCode
+
   void _updateFocus(int newIndex) {
-    setState(() {
+    if (mounted) {
+      setState(() {
       _focusedIndex = newIndex;
     });
+    }
   }
 
-  _favoriteChange(int index) async {
-    setState(() {
-      storage.favoritedChannels
-          .remove(storage.arrangedChannelList[index].channelName);
-      storage.arrangedChannelList.removeAt(index);
-    });
-    await storage.saveChanges();
+  //AdmobCode
+  // final adUnitId = "ca-app-pub-4100835771816662/8345695856";
+  // void _loadAd() {
+  //   _bannerAd = BannerAd(
+  //     adUnitId: adUnitId,
+  //     request: const AdRequest(),
+  //     size: AdSize.banner,
+  //     listener: BannerAdListener(
+  //       onAdLoaded: (ad) {
+  //         debugPrint('$ad loaded.');
+  //         if (mounted) {
+  //           setState(() {});
+  //         }
+  //       },
+  //       onAdFailedToLoad: (ad, err) {
+  //         debugPrint('BannerAd failed to load: $err');
+  //         ad.dispose();
+  //       },
+  //     ),
+  //   )..load();
+  // }
+  //AdmobCode
+
+  Icon _favoriteIcon(String channelName) {
+    if (!storageProvider.storage
+        .get('favoritedChannelList', defaultValue: []).contains(channelName)) {
+      return Icon(
+        Icons.star_border,
+        color: Colors.indigo[900],
+      );
+    } else {
+      return Icon(
+        Icons.star,
+        color: Colors.indigo[900],
+      );
+    }
   }
 
-  _goToChannel(int index) {
-    if (storage.arrangedChannelList[index].source == Source.iptv) {
+  void _favoriteChange(int index) async {
+    List<String> favoritedChannels = storageProvider.storage
+        .get('favoritedChannelList', defaultValue: []).cast<String>();
+    String selectedChannel =
+        storageProvider.storage.get('favoritedChannelList')[index];
+
+    if (favoritedChannels.contains(selectedChannel)) {
+      favoritedChannels.remove(selectedChannel);
+      await storageProvider.storage
+          .put('favoritedChannelList', favoritedChannels);
+    }
+  }
+
+  void _goToChannel(int index) {
+    List<Channel> channelList =
+        (storageProvider.storage.get('channelList') as List).cast<Channel>();
+    List<String> favoritedChannelList = (storageProvider.storage
+            .get('favoritedChannelList', defaultValue: []) as List)
+        .cast<String>();
+    String selectedChannelName = favoritedChannelList[index];
+
+    Channel selectedChannel = channelList
+        .firstWhere((channel) => channel.channelName == selectedChannelName);
+    int channelIndexInList = channelList.indexOf(selectedChannel);
+
+    if (selectedChannel.source == Source.iptv) {
       goToChannelPageIPTV(
-          context: context,
-          index: storage.channels.getIndexByChannelName(
-              storage.arrangedChannelList[index].channelName),
-          storage: storage,
-          isTV: isTV);
+          context: context, index: channelIndexInList, isTV: isTV);
     } else {
       goToChannelPageYouTube(
-          context: context,
-          index: storage.channels.getIndexByChannelName(
-              storage.arrangedChannelList[index].channelName),
-          storage: storage,
-          isTV: isTV);
+          context: context, index: channelIndexInList, isTV: isTV);
+    }
+  }
+
+  void _updateScreen() {
+    if (mounted) {
+      setState(() {});
     }
   }
 
   @override
   void initState() {
     super.initState();
-    storage = widget.storage;
-    formattingProvider = widget.formattingProvider;
     isTV = widget.isTV;
-    storage.initializeFavorites();
+
+    //AdmobCode
+    // _loadAd();
+    //AdmobCode
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      storageProvider.storage.listenable().addListener(_updateScreen);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return (storage.arrangedChannelList.isNotEmpty)
+    return (storageProvider.storage
+                .get('favoritedChannelList', defaultValue: []).isNotEmpty &&
+            (storageProvider.storage.get('favoritedChannelList') as List).any(
+                (favorite) =>
+                    (storageProvider.storage.get('channelList') as List)
+                        .any((channel) => channel.channelName == favorite)))
         ? Scaffold(
             appBar: const MainAppBar(),
             body: SingleChildScrollView(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                TopNavBar(
-                  storage: storage,
-                  formattingProvider: formattingProvider,
-                  focusedIndex: _focusedIndex,
-                  updateFocus: _updateFocus,
-                  isTV: isTV,
-                ),
-                ListView.builder(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  TopNavBar(
+                    focusedIndex: _focusedIndex,
+                    updateFocus: _updateFocus,
+                    isTV: isTV,
+                  ),
+
+                  //AdmobCode
+                  // (_bannerAd != null) ? Align(
+                  //   alignment: Alignment.bottomCenter,
+                  //   child: SafeArea(
+                  //     child: SizedBox(
+                  //       width: _bannerAd!.size.width.toDouble(),
+                  //       height: _bannerAd!.size.height.toDouble(),
+                  //       child: AdWidget(ad: _bannerAd!),
+                  //     ),
+                  //   ),
+                  // ):SizedBox(),
+                  //AdmobCode
+
+                  ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: storage.arrangedChannelList.length,
+                    itemCount: storageProvider.storage
+                        .get('favoritedChannelList', defaultValue: []).length,
                     itemBuilder: (context, index) {
-                      bool isChannelFocused = _focusedIndex == index + 3;
-                      Color? channelColor =
-                          isChannelFocused ? Colors.blue[300] : null;
-                      bool isStarFocused = _focusedIndex ==
-                          index + 3 + storage.arrangedChannelList.length;
-                      Color? starColor =
-                          isStarFocused ? Colors.blue[300] : null;
-                      return Row(
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: DpadOption(
-                                onSelect: () => _goToChannel(index),
-                                onFocus: (isFocused) {
-                                  if (isFocused) {
-                                    _updateFocus(index + 3);
-                                  }
-                                },
-                                child: GestureDetector(
-                                  onTap: () => _goToChannel(index),
-                                  child: Card(
-                                      color: channelColor,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(18.0),
-                                        child: Row(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 9.0),
-                                              child: formattingProvider
-                                                  .formatIcon(storage
-                                                      .arrangedChannelList[
-                                                          index]
-                                                      .source),
-                                            ),
-                                            Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 9.0),
-                                                child: Text(
-                                                  storage
-                                                      .arrangedChannelList[
-                                                          index]
-                                                      .channelName,
-                                                  style: const TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 15.0),
-                                                )),
-                                          ],
-                                        ),
-                                      )),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(3.0),
-                            child: DpadOption(
-                              onSelect: () => _favoriteChange(index),
-                              onFocus: (isFocused) {
-                                if (isFocused) {
-                                  _updateFocus(index +
+                      if ((storageProvider.storage.get('channelList') as List)
+                          .cast<Channel>()
+                          .any((channel) =>
+                              channel.channelName ==
+                              (storageProvider.storage.get(
+                                  'favoritedChannelList',
+                                  defaultValue: []) as List)[index])) {
+                        bool isChannelFocused = _focusedIndex == index + 3;
+                        bool isStarFocused = _focusedIndex ==
+                            index +
+                                3 +
+                                storageProvider.storage.get(
+                                    'favoritedChannelList',
+                                    defaultValue: []).length;
+
+                        return ChannelListItem(
+                          channelName: storageProvider.storage
+                              .get('favoritedChannelList')[index],
+                          source: storageProvider.storage
+                              .get('channelList')
+                              .firstWhere((channel) =>
+                                  channel.channelName ==
+                                  storageProvider.storage
+                                      .get('favoritedChannelList')[index])
+                              .source,
+                          isFocused: isChannelFocused,
+                          isFavoriteFocused: isStarFocused,
+                          onChannelSelect: () => _goToChannel(index),
+                          onFavoriteSelect: () => _favoriteChange(index),
+                          onChannelFocus: (isFocused) {
+                            if (isFocused) _updateFocus(index + 3);
+                          },
+                          onFavoriteFocus: (isFocused) {
+                            if (isFocused) {
+                              _updateFocus((index +
                                       3 +
-                                      storage.arrangedChannelList.length);
-                                }
-                              },
-                              child: GestureDetector(
-                                onTap: () => _favoriteChange(index),
-                                child: Card(
-                                  color: starColor,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(18.0),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 9.0),
-                                      child: Icon(
-                                        Icons.star,
-                                        color: Colors.indigo[900],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      );
-                    }),
-              ],
-            )),
+                                      storageProvider.storage.get(
+                                          'favoritedChannelList',
+                                          defaultValue: []).length)
+                                  .toInt());
+                            }
+                          },
+                          favoriteIcon: _favoriteIcon(storageProvider.storage
+                              .get('favoritedChannelList')[index]),
+                        );
+                      } else {
+                        return const SizedBox();
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
           )
         : Scaffold(
             appBar: const MainAppBar(),
             body: Column(
               children: [
                 TopNavBar(
-                  storage: storage,
-                  formattingProvider: formattingProvider,
                   focusedIndex: _focusedIndex,
                   updateFocus: _updateFocus,
                   isTV: isTV,

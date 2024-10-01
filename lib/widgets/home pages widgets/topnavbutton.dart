@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:digilogtv/services/storage.dart';
-import 'package:digilogtv/services/formatting.dart';
 import 'package:digilogtv/services/dpadoption.dart';
 
 class TopNavButton extends StatelessWidget {
@@ -11,8 +9,6 @@ class TopNavButton extends StatelessWidget {
     required this.index,
     required this.focusedIndex,
     required this.updateFocus,
-    required this.storage,
-    required this.formattingProvider,
     required this.isTV,
     required this.onSelect,
   });
@@ -21,8 +17,6 @@ class TopNavButton extends StatelessWidget {
   final int index;
   final int focusedIndex;
   final Function(int) updateFocus;
-  final StorageProvider storage;
-  final FormattingProvider formattingProvider;
   final bool isTV;
   final Function onSelect;
 
@@ -34,8 +28,6 @@ class TopNavButton extends StatelessWidget {
         child: DpadOption(
           onSelect: () => onSelect(
               context: context,
-              storage: storage,
-              formattingProvider: formattingProvider,
               isTV: isTV),
           onFocus: (isFocused) {
             if (isFocused) {
@@ -45,8 +37,6 @@ class TopNavButton extends StatelessWidget {
           child: GestureDetector(
             onTap: () => onSelect(
                 context: context,
-                storage: storage,
-                formattingProvider: formattingProvider,
                 isTV: true),
             child: Card(
               color: index == focusedIndex ? Colors.indigo[900] : null,

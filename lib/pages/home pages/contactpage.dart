@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:digilogtv/services/storage.dart';
-import 'package:digilogtv/services/formatting.dart';
-import 'package:digilogtv/pages/home%20pages/home%20pages%20widgets/mainappbar.dart';
-import 'package:digilogtv/pages/home%20pages/home%20pages%20widgets/topnavbar.dart';
+import 'package:digilogtv/widgets/home%20pages%20widgets/mainappbar.dart';
+import 'package:digilogtv/widgets/home%20pages%20widgets/topnavbar.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({
     super.key,
-    required this.storage,
-    required this.formattingProvider,
     required this.isTV,
   });
 
-  final StorageProvider storage;
-  final FormattingProvider formattingProvider;
   final bool isTV;
 
   @override
@@ -37,8 +31,6 @@ class _ContactPageState extends State<ContactPage> {
       body: Column(
         children: [
           TopNavBar(
-            storage: widget.storage,
-            formattingProvider: widget.formattingProvider,
             focusedIndex: _focusedIndex,
             updateFocus: _updateFocus,
             isTV: widget.isTV,

@@ -3,11 +3,12 @@ import 'package:digilogtv/services/storage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class UpdateManager {
+  StorageProvider storageProvider = StorageProvider();
   late PackageInfo packageInfo;
 
-  Future<bool> checkIfAppWasUpdated(StorageProvider storage) async {
+  Future<bool> checkIfAppWasUpdated() async {
     packageInfo = await PackageInfo.fromPlatform();
-    String lastVersion = storage.getLastVersion() ?? '0.0.0';
+    String lastVersion = storageProvider.storage.get('lastVersion', defaultValue: '0.0.0');
     if (lastVersion == packageInfo.version) {
       return false;
     } else {
@@ -16,10 +17,10 @@ class UpdateManager {
   }
 
   getUpdateMessage() {
-    return "We've updated the Digilog TV channel list! A big thanks to our content partner, Free-TV/IPTV on GitHub, for providing us with free, legal, and publicly available content.\n\nWe're also excited to announce the release of Digilog TV - Japanese Edition. You can find it now on GitHub, and it will be available on the Play Store soon.";
+    return "Faster channel updates via GitHub—no app update needed anymore!\n\nImproved support for Google and Android TV.\n\nNon-disruptive ads added (PlayStore version only) to support future development plans.\n\nBig thanks to Free-TV/IPTV on GitHub for free, legal and publicly available content!";
   }
 
-  removeUpdate(StorageProvider storage) async {
-    storage.updateVersion(packageInfo.version);
+  removeUpdate() async {
+    storageProvider.storage.put('lastVersion', packageInfo.version);
   }
 }

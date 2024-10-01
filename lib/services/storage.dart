@@ -1,38 +1,21 @@
-import 'package:digilogtv/services/channels.dart';
-
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:digilogtv/models/channel.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class StorageProvider {
-  late SharedPreferences storage;
+  static final StorageProvider _instance = StorageProvider._internal();
+  late Box storage;
 
-  Channels channels = Channels();
+  StorageProvider._internal();
 
-  List<Channel> arrangedChannelList = [];
-
-  List<String> favoritedChannels = [];
-
-  initialize() async {
-    storage = await SharedPreferences.getInstance();
-    storage.reload();
-    List<String>? retrievedFavoritedChannels =
-        storage.getStringList('favorite channels');
-    favoritedChannels = retrievedFavoritedChannels ?? [];
-    channels = Channels();
+  factory StorageProvider() {
+    return _instance;
   }
 
-  initializeFavorites() {
-    arrangedChannelList = channels.getMatchingChannels(favoritedChannels);
-  }
+  Future<void> initialize() async {
+    await Hive.initFlutter();
+    Hive.registerAdapter(ChannelAdapter());
+    Hive.registerAdapter(SourceAdapter());
 
-  saveChanges() async {
-    await storage.setStringList('favorite channels', favoritedChannels);
-  }
-
-  String? getLastVersion() {
-    return storage.getString('last version');
-  }
-
-  updateVersion(String version) async {
-    await storage.setString('last version', version);
+    storage = await Hive.openBox('digilogtvBox');
   }
 }
