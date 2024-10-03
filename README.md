@@ -27,6 +27,7 @@ For news channel suggestions, please file an issue on both Free-TV/IPTV and our 
 * Offers a diverse selection of global news channels
 * Convenient favorites list for quick access to your preferred channels
 * Includes only free, legal, and publicly available content
+* Non-disruptive ads (Play Store version only) to support future development plans
 
 ## Donate XMR to Support Maintaining this App
 
