@@ -126,6 +126,12 @@
         "contactpage": "https://www3.nhk.or.jp/nhkworld/en/contact/"
     },
     {
+        "channelName": "RT",
+        "link": "https://rt-glb.rttv.com/live/rtnews/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.rt.com/about-us/contact-info/"
+    },
+    {
         "channelName": "Sky News",
         "link": "https://skynewsau-live.akamaized.net/hls/live/2002689/skynewsau-extra1/master.m3u8",
         "source": "iptv",
