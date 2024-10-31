@@ -6,12 +6,6 @@
         "contactpage": "https://abcnews.go.com/Contact"
     },
     {
-        "channelName": "ABC News Australia",
-        "link": "https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8",
-        "source": "iptv",
-        "contactpage": "https://help.abc.net.au/hc/en-us/requests/new?ticket_form_id=360000036795"
-    },
-    {
         "channelName": "Al Jazeera English",
         "link": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
         "source": "iptv",
@@ -43,7 +37,7 @@
     },
     {
         "channelName": "Channel News Asia",
-        "link": "https://ythls.armelin.one/channel/UC83jt4dlz1Gjl58fzQrrKZg.m3u8",
+        "link": "http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8",
         "source": "iptv",
         "contactpage": "https://www.channelnewsasia.com/contact-us"
     },
