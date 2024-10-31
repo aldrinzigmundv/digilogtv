@@ -55,7 +55,7 @@
     },
     {
         "channelName": "CNN International",
-        "link": "https://cnn-cnninternational-1-eu.rakuten.wurl.tv/playlist.m3u8",
+        "link": "https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8",
         "source": "iptv",
         "contactpage": "https://help.cnn.com/us/Feedback"
     },
@@ -73,7 +73,7 @@
     },
     {
         "channelName": "France 24 English",
-        "link": "https://ythls.armelin.one/channel/UCQfwfsi5VrQ8yKZ-UWmAEFg.m3u8",
+        "link": "https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live2/france24_720p/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.francemediasmonde.com/en/contact"
     },
@@ -142,12 +142,6 @@
         "link": "https://rakuten-guardian-1-ie.samsung.wurl.tv/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.theguardian.com/help/contact-us"
-    },
-    {
-        "channelName": "Ticker",
-        "link": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01486-tickernews-tickernewsweb-ono/playlist.m3u8",
-        "source": "iptv",
-        "contactpage": "https://tickernews.co/contact-ticker/"
     },
     {
         "channelName": "TRT World",
