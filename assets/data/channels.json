@@ -67,13 +67,13 @@
     },
     {
         "channelName": "Euronews",
-        "link": "https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live3/euronews_720p/playlist.m3u8",
+        "link": "https://a-cdn.klowdtv.com/live3/euronews_720p/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.euronews.com/contact"
     },
     {
         "channelName": "France 24 English",
-        "link": "https://cdn.klowdtv.net/803B48A/n1.klowdtv.net/live2/france24_720p/playlist.m3u8",
+        "link": "https://a-cdn.klowdtv.com/live2/france24_720p/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.francemediasmonde.com/en/contact"
     },
