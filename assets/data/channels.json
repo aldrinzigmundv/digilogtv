@@ -73,7 +73,7 @@
     },
     {
         "channelName": "France 24 English",
-        "link": "http://n1.klowdtv.net/live2/france24_720p/chunks.m3u8",
+        "link": "https://a-cdn.klowdtv.com/live2/france24_720p/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.francemediasmonde.com/en/contact"
     },
@@ -91,7 +91,7 @@
     },
     {
         "channelName": "i24 News",
-        "link": "https://bcovlive-a.akamaihd.net/6e3dd61ac4c34d6f8fb9698b565b9f50/eu-central-1/5377161796001/playlist-all_dvr.m3u8",
+        "link": "https://bcovlive-a.akamaihd.net/ecf224f43f3b43e69471a7b626481af0/eu-central-1/5377161796001/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.i24news.tv/en/contact"
     },
