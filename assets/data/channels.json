@@ -103,7 +103,7 @@
     },
     {
         "channelName": "NBC News Now",
-        "link": "https://dai2.xumo.com/amagi_hls_data_xumo1212A-xumo-nbcnewsnow/CDN/master.m3u8",
+        "link": "https://xumo-drct-nbcnn-ir8ze.fast.nbcuni.com/live/master.m3u8",
         "source": "iptv",
         "contactpage": "https://www.nbcnews.com/information/nbc-news-info/contact-us-n1232521"
     },
@@ -115,7 +115,7 @@
     },
     {
         "channelName": "NHK World Japan",
-        "link": "https://ythls.armelin.one/channel/UCSPEjw8F2nQDtmUKPFNF7_A.m3u8",
+        "link": "https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index.m3u8",
         "source": "iptv",
         "contactpage": "https://www3.nhk.or.jp/nhkworld/en/contact/"
     },
