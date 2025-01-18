@@ -120,6 +120,12 @@
         "contactpage": "https://www3.nhk.or.jp/nhkworld/en/contact/"
     },
     {
+        "channelName": "Reuters TV",
+        "link": "https://amg00453-reuters-amg00453c1-xumo-us-2073.playouts.now.amagi.tv/reuters-reuters-hls/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://www.reuters.com/info-pages/contact-us/"
+    },
+    {
         "channelName": "RT",
         "link": "https://rt-glb.rttv.com/live/rtnews/playlist.m3u8",
         "source": "iptv",
@@ -148,6 +154,12 @@
         "link": "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
         "source": "iptv",
         "contactpage": "https://www.trtworld.com/contact"
+    },
+    {
+        "channelName": "USA Today",
+        "link": "https://usatodaynews-xumo.amagi.tv/playlist.m3u8",
+        "source": "iptv",
+        "contactpage": "https://help.usatoday.com/contact-us"
     },
     {
         "channelName": "Yahoo! Finance",
