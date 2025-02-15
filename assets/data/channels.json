@@ -67,7 +67,7 @@
     },
     {
         "channelName": "Euronews",
-        "link": "https://rakuten-euronews-1-se.samsung.wurl.tv/manifest/playlist.m3u8",
+        "link": "https://apollo.production-public.tubi.io/live/ac-euronews2.m3u8",
         "source": "iptv",
         "contactpage": "https://www.euronews.com/contact"
     },
@@ -142,12 +142,6 @@
         "link": "https://livetv-fa.tubi.video/scripps-news/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://support.scrippsnews.com/support/tickets/new"
-    },
-    {
-        "channelName": "The Guardian",
-        "link": "https://rakuten-guardian-1-ie.samsung.wurl.tv/playlist.m3u8",
-        "source": "iptv",
-        "contactpage": "https://www.theguardian.com/help/contact-us"
     },
     {
         "channelName": "TRT World",
