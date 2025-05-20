@@ -6,6 +6,12 @@
         "contactpage": "https://abcnews.go.com/Contact"
     },
     {
+        "channelName": "ABC News Australia",
+        "link": "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
+        "source": "iptv",
+        "contactpage": "https://help.abc.net.au/hc/en-us/requests/new?ticket_form_id=360000036795"
+    },
+    {
         "channelName": "Al Jazeera English",
         "link": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8",
         "source": "iptv",
@@ -28,6 +34,12 @@
         "link": "https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8",
         "source": "iptv",
         "contactpage": "https://www.bloomberg.com/professional/support/"
+    },
+    {
+        "channelName": "CBC News Network",
+        "link": "https://cbsn-us.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master.m3u8",
+        "source": "iptv",
+        "contactpage": "https://cbchelp.cbc.ca/hc/en-ca/requests/new"
     },
     {
         "channelName": "CBS News",
@@ -97,7 +109,7 @@
     },
     {
         "channelName": "LiveNOW from FOX",
-        "link": "http://fox-foxnewsnow-samsungus.amagi.tv/playlist.m3u8",
+        "link": "https://fox-foxnewsnow-vizio.amagi.tv/playlist.m3u8",
         "source": "iptv",
         "contactpage": "https://www.livenowfox.com/contact-us"
     },
@@ -112,12 +124,6 @@
         "link": "https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8",
         "source": "iptv",
         "contactpage": "https://www.newsmax.com/contact/"
-    },
-    {
-        "channelName": "NHK World Japan",
-        "link": "https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index.m3u8",
-        "source": "iptv",
-        "contactpage": "https://www3.nhk.or.jp/nhkworld/en/contact/"
     },
     {
         "channelName": "Reuters TV",
@@ -148,12 +154,6 @@
         "link": "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
         "source": "iptv",
         "contactpage": "https://www.trtworld.com/contact"
-    },
-    {
-        "channelName": "USA Today",
-        "link": "https://usatodaynews-xumo.amagi.tv/playlist.m3u8",
-        "source": "iptv",
-        "contactpage": "https://help.usatoday.com/contact-us"
     },
     {
         "channelName": "Yahoo! Finance",
