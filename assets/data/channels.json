@@ -61,8 +61,8 @@
     },
     {
         "channelName": "CNBC",
-        "link": "https://www.youtube.com/embed/9NyxcX3rhQs?autoplay=1 referrerpolicy=\"strict-origin-when-cross-origin\"",
-        "source": "youtube",
+        "link": "https://tvpass.org/live/CNBC/hd",
+        "source": "iptv",
         "contactpage": "https://help.cnbc.com/contact/"
     },
     {
