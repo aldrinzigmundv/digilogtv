@@ -60,12 +60,6 @@
         "contactpage": "https://www.cheddar.com/media/about-cheddar/"
     },
     {
-        "channelName": "CNBC",
-        "link": "https://tvpass.org/live/CNBC/hd",
-        "source": "iptv",
-        "contactpage": "https://help.cnbc.com/contact/"
-    },
-    {
         "channelName": "CNN International",
         "link": "https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8",
         "source": "iptv",
